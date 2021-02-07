@@ -1,7 +1,8 @@
 import { setupRouter } from "./controllers/routes"
-import { BaseComponents, GlobalContext } from "./types"
+import { AppComponents, GlobalContext, TestComponents } from "./types"
 
-export async function main(components: BaseComponents) {
+// this function wires the business logic (adapters & controllers) with the components (ports)
+export async function main(components: AppComponents | TestComponents) {
   const globalContext: GlobalContext = {
     components,
   }

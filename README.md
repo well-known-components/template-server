@@ -6,9 +6,6 @@ Extension of "ports and adapters architecture", also known as "hexagonal archite
 
 With this architecture, code is organized into several layers: logic, controllers, adapters, and ports.
 
-### adapters
-
-Converts one internal data type into an external one and vice versa i.e: a normalized internal DB model into a JSON representation with camel casing.
 
 ### logic
 
@@ -17,10 +14,12 @@ Deals with pure business logic and shouldn't have side-effects or throw exceptio
 ### controllers
 
 The "glue" between all the other layers, orchestrating calls between pure business logic, adapters, and ports.
-adapters
+
+### adapters
 
 The layer that converts external data representations into internal ones, and vice-versa. Acts as buffer to protect the service from changes in the outside world; when a data representation changes, you only need to change how the adapters deal with it.
-ports
+
+### ports
 
 The layer that communicates with the outside world, such as http, kafka, and the database.
 
