@@ -1,12 +1,12 @@
 import expect from "expect"
+import { TestComponents } from "../../src/types"
 import { describeE2E } from "../harness/test-components-http-server"
 import { describeTestE2E } from "../harness/test-components-mock"
-import { TestComponents } from "../harness/test-helper"
 
 describeE2E("integration sanity tests using a real server backend", integrationSuite)
 describeTestE2E("integration sanity tests using mocked test server", integrationSuite)
 
-function integrationSuite(getComponents: () => TestComponents<any>) {
+function integrationSuite(getComponents: () => TestComponents) {
   it("responds /ping", async () => {
     const { fetch } = getComponents()
 

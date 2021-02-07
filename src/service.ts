@@ -1,7 +1,7 @@
 import { setupRouter } from "./controllers/routes"
-import { AppComponents, GlobalContext } from "./types"
+import { BaseComponents, GlobalContext } from "./types"
 
-export async function main(components: AppComponents) {
+export async function main(components: BaseComponents) {
   const globalContext: GlobalContext = {
     components,
   }

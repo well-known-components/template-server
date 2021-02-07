@@ -2,20 +2,21 @@ import { main } from "../../src/service"
 import { createConfigComponent } from "@well-known-components/env-config-provider"
 import { createTestServerComponent, IFetchComponent } from "@well-known-components/http-server"
 import { createLogComponent } from "@well-known-components/logger"
-import { createE2ERunner, TestComponents } from "./test-helper"
+import { createE2ERunner } from "./test-helper"
+import { GlobalContext, TestComponents } from "../../src/types"
 
 // creates a "mocha-like" describe function to run tests using the test components
 export const describeTestE2E = createE2ERunner({
-  main: main as any,
+  main,
   initComponents,
 })
 
-async function initComponents<C extends object>(): Promise<TestComponents<C>> {
+async function initComponents(): Promise<TestComponents> {
   const logs = createLogComponent()
 
   const config = createConfigComponent({})
 
-  const server = createTestServerComponent<C>()
+  const server = createTestServerComponent<GlobalContext>()
 
   const fetch: IFetchComponent = server
 

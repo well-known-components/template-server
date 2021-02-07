@@ -1,3 +1,4 @@
+import type { IFetchComponent } from "@well-known-components/http-server"
 import type {
   IConfigComponent,
   ILoggerComponent,
@@ -6,12 +7,23 @@ import type {
 } from "@well-known-components/interfaces"
 
 export type GlobalContext = {
-  components: AppComponents
+  components: BaseComponents
 }
 
-export type AppComponents = {
+// components used in every environment
+export type BaseComponents = {
   config: IConfigComponent
   logs: ILoggerComponent
   server: IHttpServerComponent<GlobalContext>
+  fetch: IFetchComponent
+}
+
+// components used in runtime
+export type AppComponents = BaseComponents & {
   statusChecks: IBaseComponent
+}
+
+// components used in tests
+export type TestComponents = BaseComponents & {
+  
 }

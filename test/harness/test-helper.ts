@@ -1,25 +1,17 @@
-import { IFetchComponent } from "@well-known-components/http-server/dist/test-component"
-import { IConfigComponent, IHttpServerComponent, ILoggerComponent, Lifecycle } from "@well-known-components/interfaces"
-
-export type TestComponents<C extends object> = {
-  server: IHttpServerComponent<C> & { resetMiddlewares(): void }
-  logs: ILoggerComponent
-  config: IConfigComponent
-  fetch: IFetchComponent
-}
+import { Lifecycle } from "@well-known-components/interfaces"
 
 export type RunnerOptions<Components> = {
   main: (components: Components) => Promise<any>
   initComponents: () => Promise<Components>
 }
 
-export const createE2ERunner = (options: RunnerOptions<TestComponents<any>>) => {
-  return <C extends object>(name: string, suite: (getComponents: () => TestComponents<C>) => void) => {
+export const createE2ERunner = <TestComponents>(options: RunnerOptions<TestComponents>) => {
+  return (name: string, suite: (getComponents: () => TestComponents) => void) => {
     describe(name, () => {
-      let program: Lifecycle.ComponentBasedProgram<TestComponents<C>>
+      let program: Lifecycle.ComponentBasedProgram<TestComponents>
 
       before(async () => {
-        program = await Lifecycle.programEntryPoint<TestComponents<C>>(options)
+        program = await Lifecycle.programEntryPoint<TestComponents>(options)
       })
 
       function getComponents() {
