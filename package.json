@@ -1,0 +1,24 @@
+{
+  "name": "crypto-exporter",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.0",
+    "@types/cors": "^2.8.9",
+    "@types/mocha": "^8.2.0",
+    "@types/node": "^14.14.7",
+    "expect": "^26.6.2",
+    "mocha": "^8.2.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "@well-known-components/env-config-provider": "^1.0.0-20210114204501.commit-2484915",
+    "@well-known-components/http-server": "^1.0.0-20210207003033.commit-3103089",
+    "@well-known-components/interfaces": "^1.0.0-20210127151119.commit-2bbd319",
+    "@well-known-components/logger": "^1.0.0-20210110175006.commit-9c592da"
+  }
+}
