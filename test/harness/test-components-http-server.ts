@@ -5,6 +5,9 @@ import { createLogComponent } from "@well-known-components/logger"
 import nodeFetch from "node-fetch"
 import { createE2ERunner } from "./test-helper"
 import { GlobalContext, TestComponents } from "../../src/types"
+import { metricDeclarations } from "../../src/metrics"
+import { IHttpServerComponent } from "@well-known-components/interfaces"
+import { createMetricsComponent } from "@well-known-components/metrics"
 
 let currentPort = 19000
 
@@ -38,5 +41,7 @@ async function initComponents(): Promise<TestComponents> {
     },
   }
 
-  return { logs, config, server, fetch }
+  const metrics = await createMetricsComponent(metricDeclarations, { server, config })
+
+  return { logs, config, server, fetch, metrics }
 }

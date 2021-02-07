@@ -4,6 +4,8 @@ import { createTestServerComponent, IFetchComponent } from "@well-known-componen
 import { createLogComponent } from "@well-known-components/logger"
 import { createE2ERunner } from "./test-helper"
 import { GlobalContext, TestComponents } from "../../src/types"
+import { metricDeclarations } from "../../src/metrics"
+import { createTestMetricsComponent } from "@well-known-components/metrics"
 
 // creates a "mocha-like" describe function to run tests using the test components
 export const describeTestE2E = createE2ERunner({
@@ -20,5 +22,7 @@ async function initComponents(): Promise<TestComponents> {
 
   const fetch: IFetchComponent = server
 
-  return { logs, config, server, fetch }
+  const metrics = createTestMetricsComponent(metricDeclarations)
+
+  return { logs, config, server, fetch, metrics }
 }

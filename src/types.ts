@@ -4,7 +4,9 @@ import type {
   ILoggerComponent,
   IHttpServerComponent,
   IBaseComponent,
+  IMetricsComponent,
 } from "@well-known-components/interfaces"
+import { metricDeclarations } from "./metrics"
 
 export type GlobalContext = {
   components: BaseComponents
@@ -16,6 +18,7 @@ export type BaseComponents = {
   logs: ILoggerComponent
   server: IHttpServerComponent<GlobalContext>
   fetch: IFetchComponent
+  metrics: IMetricsComponent<keyof typeof metricDeclarations>
 }
 
 // components used in runtime
@@ -24,6 +27,4 @@ export type AppComponents = BaseComponents & {
 }
 
 // components used in tests
-export type TestComponents = BaseComponents & {
-  
-}
+export type TestComponents = BaseComponents & {}

@@ -10,4 +10,5 @@ export async function main(components: AppComponents | TestComponents) {
   // wire the HTTP router (make it automatic? TBD)
   const router = await setupRouter(globalContext)
   components.server.use(router.middleware())
+  components.server.setContext(globalContext)
 }
