@@ -17,7 +17,7 @@
     "@well-known-components/env-config-provider": "^1.0.0-20210114204501.commit-2484915",
     "@well-known-components/http-server": "^1.0.0-20210207003033.commit-3103089",
     "@well-known-components/interfaces": "^1.0.0-20210207132736.commit-6d004c2",
-    "@well-known-components/logger": "^1.0.0-20210110175006.commit-9c592da",
+    "@well-known-components/logger": "^1.0.0",
     "@well-known-components/metrics": "^1.0.0-20210207144449.commit-7f69e96",
     "prom-client": "^13.1.0"
   }
