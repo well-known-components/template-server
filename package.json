@@ -11,7 +11,7 @@
     "expect": "^26.6.2",
     "mocha": "^8.2.1",
     "ts-node": "^9.1.1",
-    "typescript": "^4.1.3"
+    "typescript": "^4.2.4"
   },
   "dependencies": {
     "@well-known-components/env-config-provider": "^1.0.0-20210114204501.commit-2484915",
