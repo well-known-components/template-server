@@ -3,16 +3,16 @@ import { createConfigComponent } from "@well-known-components/env-config-provide
 import { createServerComponent, IFetchComponent } from "@well-known-components/http-server"
 import { createLogComponent } from "@well-known-components/logger"
 import nodeFetch from "node-fetch"
-import { createE2ERunner } from "./test-helper"
 import { GlobalContext, TestComponents } from "../../src/types"
 import { metricDeclarations } from "../../src/metrics"
 import { IHttpServerComponent } from "@well-known-components/interfaces"
 import { createMetricsComponent } from "@well-known-components/metrics"
+import { createRunner } from "@well-known-components/test-helpers"
 
 let currentPort = 19000
 
 // creates a "mocha-like" describe function to run tests using the test components
-export const describeE2E = createE2ERunner({
+export const test = createRunner({
   main,
   initComponents,
 })
