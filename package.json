@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "@types/mocha": "^8.2.2",
-    "@types/node": "^15.0.1",
+    "@types/node": "^15.0.3",
     "expect": "^26.6.2",
     "mocha": "^8.3.2",
     "ts-node": "^9.1.1",
