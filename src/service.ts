@@ -14,6 +14,6 @@ export async function main(program: Lifecycle.EntryPointParameters<AppComponents
   components.server.use(router.middleware())
   components.server.setContext(globalContext)
 
-  // start ports: db, listeners, synchronizatons, etc
+  // start ports: db, listeners, synchronizations, etc
   await startComponents()
 }

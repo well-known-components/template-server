@@ -1,5 +1,4 @@
 import { createTestMetricsComponent } from "@well-known-components/metrics"
-import expect from "expect"
 import { pingHandler } from "../../src/controllers/handlers/ping-handler"
 import { metricDeclarations } from "../../src/metrics"
 

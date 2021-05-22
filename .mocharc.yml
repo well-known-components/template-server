@@ -1,8 +1,0 @@
-require:
-  - 'test/harness/index'
-reporter:
-  - 'spec'
-watch-files:
-  - 'dist/**/*.js'
-  - 'test/**/*.ts'
-spec: 'test/**/*.spec.ts'
