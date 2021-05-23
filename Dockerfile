@@ -29,6 +29,10 @@ RUN npm ci --only=production
 ########################## END OF BUILD STAGE ##########################
 
 FROM node:lts
+
+# NODE_ENV is used to configure some runtime options, like JSON logger
+ENV NODE_ENV production
+
 WORKDIR /app
 COPY --from=builderenv /app /app
 COPY --from=builderenv /tini /tini
