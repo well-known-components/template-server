@@ -2,7 +2,7 @@
   "name": "template-server",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "start": "node --abort-on-uncaught-exception --unhandled-rejections=strict dist/index.js",
+    "start": "node --trace-warnings --abort-on-uncaught-exception --unhandled-rejections=strict dist/index.js",
     "test": "jest --forceExit --detectOpenHandles --coverage --verbose"
   },
   "devDependencies": {
