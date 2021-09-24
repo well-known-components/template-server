@@ -12,7 +12,7 @@ export async function initComponents(): Promise<AppComponents> {
 
   const logs = createLogComponent()
   const server = await createServerComponent<GlobalContext>({ config, logs }, {})
-  const statusChecks = await createStatusCheckComponent({ server })
+  const statusChecks = await createStatusCheckComponent({ server, config })
   const fetch = await createFetchComponent()
   const metrics = await createMetricsComponent(metricDeclarations, { server, config })
 

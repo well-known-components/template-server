@@ -42,4 +42,4 @@ COPY --from=builderenv /tini /tini
 #            and: https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-containers/
 ENTRYPOINT ["/tini", "--"]
 # Run the program under Tini
-CMD [ "/usr/local/bin/node", "--abort-on-uncaught-exception", "--unhandled-rejections=strict", "dist/index.js" ]
+CMD [ "/usr/local/bin/node", "--trace-warnings", "--abort-on-uncaught-exception", "--unhandled-rejections=strict", "dist/index.js" ]

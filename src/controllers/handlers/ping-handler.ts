@@ -1,8 +1,7 @@
-import { AppComponents } from "../../types"
+import { HandlerContextWithPath } from "../../types"
 
 // handlers arguments only type what they need, to make unit testing easier
-export type PingComponents = Pick<AppComponents, "metrics">
-export async function pingHandler(context: { url: URL; components: PingComponents }) {
+export async function pingHandler(context: Pick<HandlerContextWithPath<"metrics", "/ping">, "url" | "components">) {
   const {
     url,
     components: { metrics },

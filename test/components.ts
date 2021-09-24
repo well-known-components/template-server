@@ -2,20 +2,16 @@
 // Here we define the test components to be used in the testing environment
 
 import nodeFetch, { RequestInfo, RequestInit } from "node-fetch"
-import { createConfigComponent } from "@well-known-components/env-config-provider"
-import { createServerComponent, IFetchComponent } from "@well-known-components/http-server"
-import { createLogComponent } from "@well-known-components/logger"
-import { createMetricsComponent } from "@well-known-components/metrics"
+import { IFetchComponent } from "@well-known-components/http-server"
 import { createRunner } from "@well-known-components/test-helpers"
 
 import { main } from "../src/service"
-import { GlobalContext, TestComponents } from "../src/types"
-import { metricDeclarations } from "../src/metrics"
-import { createFetchComponent } from "../src/ports/fetch"
+import { TestComponents } from "../src/types"
+import { initComponents as originalInitComponents } from "../src/components"
 
 // start TCP port for listeners
-let lastUsedPort = 19000 + parseInt(process.env.JEST_WORKER_ID || '1') * 1000
-function getFreePort(){
+let lastUsedPort = 19000 + parseInt(process.env.JEST_WORKER_ID || "1") * 1000
+function getFreePort() {
   return lastUsedPort + 1
 }
 
@@ -32,22 +28,19 @@ export const test = createRunner<TestComponents>({
 })
 
 async function initComponents(): Promise<TestComponents> {
-  const logs = createLogComponent()
-
   const currentPort = getFreePort()
 
-  const config = createConfigComponent({
+  Object.assign(process.env, {
     HTTP_SERVER_PORT: (currentPort + 1).toString(),
-    HTTP_SERVER_HOST: "0.0.0.0",
   })
+
+  const components = await originalInitComponents()
+
+  const { config } = components
 
   const protocolHostAndProtocol = `http://${await config.requireString(
     "HTTP_SERVER_HOST"
   )}:${await config.requireNumber("HTTP_SERVER_PORT")}`
-
-  const server = await createServerComponent<GlobalContext>({ logs, config }, {})
-
-  const fetch: IFetchComponent = await createFetchComponent()
 
   // test fetch, to hit our local server
   const localFetch: IFetchComponent = {
@@ -55,12 +48,13 @@ async function initComponents(): Promise<TestComponents> {
       if (typeof url == "string" && url.startsWith("/")) {
         return nodeFetch(protocolHostAndProtocol + url, { ...initRequest })
       } else {
-        return fetch.fetch(url, initRequest)
+        throw new Error("localFetch only works for local testing-URLs")
       }
     },
   }
 
-  const metrics = await createMetricsComponent(metricDeclarations, { server, config })
-
-  return { logs, config, server, fetch, metrics, localFetch }
+  return {
+    ...components,
+    localFetch,
+  }
 }
