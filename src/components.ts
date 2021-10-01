@@ -8,7 +8,7 @@ import { metricDeclarations } from "./metrics"
 
 // Initialize all the components of the app
 export async function initComponents(): Promise<AppComponents> {
-  const config = await createDotEnvConfigComponent({})
+  const config = await createDotEnvConfigComponent({ path: [".env.default", ".env"] })
 
   const logs = createLogComponent()
   const server = await createServerComponent<GlobalContext>({ config, logs }, {})

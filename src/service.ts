@@ -11,7 +11,11 @@ export async function main(program: Lifecycle.EntryPointParameters<AppComponents
 
   // wire the HTTP router (make it automatic? TBD)
   const router = await setupRouter(globalContext)
+  // register routes middleware
   components.server.use(router.middleware())
+  // register not implemented/method not allowed/cors responses middleware
+  components.server.use(router.allowedMethods())
+  // set the context to be passed to the handlers
   components.server.setContext(globalContext)
 
   // start ports: db, listeners, synchronizations, etc
