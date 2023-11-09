@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.2.5",
-    "@well-known-components/test-helpers": "^1.5.0",
+    "@well-known-components/test-helpers": "^1.5.3",
     "typescript": "^4.8.3"
   },
   "prettier": {
