@@ -8,7 +8,7 @@
   "devDependencies": {
     "@types/node": "^20.2.5",
     "@well-known-components/test-helpers": "^1.5.3",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.2"
   },
   "prettier": {
     "printWidth": 120,
