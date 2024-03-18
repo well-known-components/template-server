@@ -23,7 +23,7 @@ RUN yarn build
 RUN yarn test
 
 # remove devDependencies, keep only used dependencies
-RUN yarn install --frozen-lockfile
+RUN yarn install --frozen-lockfile --production
 
 ########################## END OF BUILD STAGE ##########################
 
