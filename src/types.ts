@@ -1,12 +1,12 @@
-import type { IFetchComponent } from "@well-known-components/http-server"
 import type {
   IConfigComponent,
   ILoggerComponent,
   IHttpServerComponent,
   IBaseComponent,
   IMetricsComponent,
-} from "@well-known-components/interfaces"
-import { metricDeclarations } from "./metrics"
+  IFetchComponent
+} from '@well-known-components/interfaces'
+import { metricDeclarations } from './metrics'
 
 export type GlobalContext = {
   components: BaseComponents
@@ -17,7 +17,6 @@ export type BaseComponents = {
   config: IConfigComponent
   logs: ILoggerComponent
   server: IHttpServerComponent<GlobalContext>
-  fetch: IFetchComponent
   metrics: IMetricsComponent<keyof typeof metricDeclarations>
 }
 
