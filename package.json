@@ -6,7 +6,7 @@
     "test": "jest --forceExit --detectOpenHandles --coverage --verbose"
   },
   "devDependencies": {
-    "@types/node": "^20.11.28",
+    "@types/node": "^20.14.0",
     "@well-known-components/test-helpers": "^1.5.6",
     "typescript": "^5.4.2"
   },
