@@ -740,10 +740,10 @@
     on-finished "^2.4.1"
     path-to-regexp "^6.2.1"
 
-"@well-known-components/interfaces@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@well-known-components/interfaces/-/interfaces-1.5.1.tgz#3d6a42ed409fbd8cdf5d75d818fcc84a7c47948e"
-  integrity sha512-2/8/xSOGXB8UsC4P5ORqxox+zCep35ShvW8i660YrqO57jeElfUVKOtekYEZDH0TaebP4ek35bJUW+WbAw/d0w==
+"@well-known-components/interfaces@^1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@well-known-components/interfaces/-/interfaces-1.5.2.tgz#ef7001a19d410459e65b216dd948d15be19e4efa"
+  integrity sha512-TzKQblOci2Azczk1DZ4JL5aJW7hwq7kHrFMO4lCRMmW51bA71BtiZlq0WP72Dln067xTSoHQAU4WHCFJlGYvEQ==
   dependencies:
     "@types/node" "^20.3.1"
     "@types/node-fetch" "^2.5.12"
