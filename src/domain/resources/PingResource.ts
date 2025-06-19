@@ -1,7 +1,7 @@
 import { Resource } from "@well-known-components/http-server";
-import { HttpContext } from "../../types";
-import { IncrementMetricAction } from "../actions/IncrementMetricAction";
 import { Inject } from "jeringa";
+import { IncrementMetricAction } from "../actions/IncrementMetricAction";
+import { RequestUrl } from "./resource-decorators";
 
 @Inject
 export class PingResource extends Resource {
@@ -13,10 +13,9 @@ export class PingResource extends Resource {
   @Resource.Handler('GET', '/ping')
   async ping(
     // refer to https://github.com/well-known-components/http-server/blob/main/test/resource.spec.ts for more examples
-    @Resource.RequestContext context: HttpContext
+    // @Resource.RequestContext context: HttpContext
+    @RequestUrl url: URL,
   ) {
-    const { url } = context
-
     this.incrementMetric.run(url)
 
     return {

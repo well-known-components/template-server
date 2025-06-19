@@ -32,3 +32,5 @@ export type TestComponents = BaseComponents & {
 }
 
 export type HttpContext = IHttpServerComponent.DefaultContext<GlobalContext>
+
+export type AuthenticationContext = { user: string }

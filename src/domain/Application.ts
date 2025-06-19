@@ -4,6 +4,7 @@ import { Lifecycle } from '@well-known-components/interfaces'
 import { Inject, InjectByName } from 'jeringa'
 import { PingResource } from './resources/PingResource'
 import { Router } from '@well-known-components/http-server'
+import { PrivateResource } from './resources/PrivateResource'
 
 @Inject
 export class Application {
@@ -16,6 +17,7 @@ export class Application {
   constructor(
     // HTTP Resources
     readonly pingResource: PingResource,
+    readonly privateResource: PrivateResource,
 
     // other components
     @InjectByName('components') readonly components: AppComponents,
@@ -38,6 +40,7 @@ export class Application {
     
     // register resources
     this.pingResource.registerResource(router)
+    this.privateResource.registerResource(router)
 
     // register routes middleware
     server.use(router.middleware())
