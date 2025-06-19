@@ -636,10 +636,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/http-errors@^2.0.1":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@types/http-errors/-/http-errors-2.0.4.tgz#7eb47726c391b7345a6ec35ad7f4de469cf5ba4f"
-  integrity sha512-D0CFMMtydbJAegzOyHjtiKPLlvnm3iTZyZRSZoLq2mRhDdmLfIWOCYPfQJ4cu2erKghU++QvjcUjp/5h7hESpA==
+"@types/http-errors@^2.0.4":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@types/http-errors/-/http-errors-2.0.5.tgz#5b749ab2b16ba113423feb1a64a95dcd30398472"
+  integrity sha512-r8Tayk8HJnX0FztbZN7oVqGccWgw98T/0neJphO91KkmOzug1KkofZURD4UaD5uH8AqcFLfdPErnBod0u71/qg==
 
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0", "@types/istanbul-lib-coverage@^2.0.1":
   version "2.0.6"
@@ -726,24 +726,25 @@
   dependencies:
     dotenv "^16.0.1"
 
-"@well-known-components/http-server@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@well-known-components/http-server/-/http-server-2.1.0.tgz#23a18edc82904b3a575452c2d7e618c7da37a07f"
-  integrity sha512-IHD7aLTA+9DYEchQubHDBwc4FmVEmQC+2TWbi8Tz+QlkiQdtndcuba8XHH+EwqlB5sna/EAJGZGXPxS7okcHKA==
+"@well-known-components/http-server@^2.1.1-20250530230252.commit-9d441e7":
+  version "2.1.1-20250530230252.commit-9d441e7"
+  resolved "https://registry.yarnpkg.com/@well-known-components/http-server/-/http-server-2.1.1-20250530230252.commit-9d441e7.tgz#3d8652782a7c41f9f92c10c8f85f1daaae26ab23"
+  integrity sha512-FFhLdmKnqZ6MsCay2e4Q+O0UlGsF5YjT8n7kXES9/9q0BYDleBjF2MbGJzGDLrPvK4cmn5sJ0FArTGynKsAfdA==
   dependencies:
-    "@types/http-errors" "^2.0.1"
+    "@types/http-errors" "^2.0.4"
     destroy "^1.2.0"
     fp-future "^1.0.1"
     http-errors "^2.0.0"
     mitt "^3.0.0"
     node-fetch "^2.6.9"
     on-finished "^2.4.1"
-    path-to-regexp "^6.2.1"
+    path-to-regexp "^6.3.0"
+    reflect-metadata "^0.2.2"
 
-"@well-known-components/interfaces@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@well-known-components/interfaces/-/interfaces-1.5.1.tgz#3d6a42ed409fbd8cdf5d75d818fcc84a7c47948e"
-  integrity sha512-2/8/xSOGXB8UsC4P5ORqxox+zCep35ShvW8i660YrqO57jeElfUVKOtekYEZDH0TaebP4ek35bJUW+WbAw/d0w==
+"@well-known-components/interfaces@^2.0.0-20250326140025.commit-9510b73":
+  version "2.0.0-20250326140025.commit-9510b73"
+  resolved "https://registry.yarnpkg.com/@well-known-components/interfaces/-/interfaces-2.0.0-20250326140025.commit-9510b73.tgz#97fad8a2939d5aa6612bb66a1b5ad47d2c2588b9"
+  integrity sha512-3wi7THPD3ElkGZScC4iEKA7aeVj0uYdtmUdszKB6JowH67SGFXO45P+MQF8Qz8gpJlwJRJF8vb4PstRqy80PDw==
   dependencies:
     "@types/node" "^20.3.1"
     "@types/node-fetch" "^2.5.12"
@@ -1455,6 +1456,13 @@ istanbul-reports@^3.1.3:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
+jeringa@^1.0.0-20250226115528.commit-9b7214f:
+  version "1.0.0-20250226115528.commit-9b7214f"
+  resolved "https://registry.yarnpkg.com/jeringa/-/jeringa-1.0.0-20250226115528.commit-9b7214f.tgz#6724067577a7493ae94cdccd081dfbc161adb425"
+  integrity sha512-XmMGjRZMVdswh++XKUyYmtWO9UcMlnTwLiZHerDHUP50EFH/FQ3uCCBWeyj/iaP9BmTGAho1bFCwv0Nlgt4nhg==
+  dependencies:
+    reflect-metadata "^0.2.2"
+
 jest-changed-files@^29.7.0:
   version "29.7.0"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-29.7.0.tgz#1c06d07e77c78e1585d020424dedc10d6e17ac3a"
@@ -2080,7 +2088,7 @@ path-parse@^1.0.7:
   resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
   integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
-path-to-regexp@^6.2.1:
+path-to-regexp@^6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-6.3.0.tgz#2b6a26a337737a8e1416f9272ed0766b1c0389f4"
   integrity sha512-Yhpw4T9C6hPpgPeA28us07OJeqZ5EzQTkbfwuhsUg0c237RomFoETJgmp2sa3F/41gfLE6G5cqcYwznmeEeOlQ==
@@ -2146,6 +2154,11 @@ react-is@^18.0.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
+
+reflect-metadata@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.2.2.tgz#400c845b6cba87a21f2c65c4aeb158f4fa4d9c5b"
+  integrity sha512-urBwgfrvVP/eAyXx4hluJivBKzuEbSQs9rKWCrCkbSxNv8mxPcUZKeuoF3Uy4mJl3Lwprp6yy5/39VWigZ4K6Q==
 
 require-directory@^2.1.1:
   version "2.1.1"

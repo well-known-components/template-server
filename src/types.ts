@@ -31,15 +31,6 @@ export type TestComponents = BaseComponents & {
   localFetch: IFetchComponent
 }
 
-// this type simplifies the typings of http handlers
-export type HandlerContextWithPath<
-  ComponentNames extends keyof AppComponents,
-  Path extends string = any
-> = IHttpServerComponent.PathAwareContext<
-  IHttpServerComponent.DefaultContext<{
-    components: Pick<AppComponents, ComponentNames>
-  }>,
-  Path
->
+export type HttpContext = IHttpServerComponent.DefaultContext<GlobalContext>
 
-export type Context<Path extends string = any> = IHttpServerComponent.PathAwareContext<GlobalContext, Path>
+export type AuthenticationContext = { user: string }
